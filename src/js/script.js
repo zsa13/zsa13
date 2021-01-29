@@ -26,6 +26,8 @@ counters.forEach( (item, i) => {
     lines[i].style.width = item.innerHTML;
 });
 
+
+
 //Form
 
 $('form').submit(function(e) {
