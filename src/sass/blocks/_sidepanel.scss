@@ -9,11 +9,15 @@
     z-index: 3;
     align-items: center;
     &__link {
+        &-turn {
+            transform: rotate(-90deg);
+        }
         &:hover {
             svg path {
                 fill: $main-color;
             }
         }
+
     }
     &__divider {
         width: 2px;

@@ -33,6 +33,12 @@
             max-width: 30px;
             max-height: 30px;
         }
+        &:hover {
+            text-decoration: none;
+            svg path {
+                fill: $main-color;
+            }
+        }
     }
     &__form {
         margin-top: 30px;

@@ -1,4 +1,3 @@
-
 const gulp        = require('gulp');
 const browserSync = require('browser-sync');
 const sass        = require('gulp-sass');
@@ -7,6 +6,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-htmlmin');
+const gulpSassError  = require('gulp-sass-error');
+const throwError = true;
 
 gulp.task('server', function() {
 
@@ -67,6 +68,17 @@ gulp.task('images', function () {
         .pipe(imagemin())
         .pipe(gulp.dest("dist/img"))
         .pipe(browserSync.stream());
+});
+
+gulp.task('sass', () => {
+    return gulp.src('web/css/*.scss')
+        .pipe(
+            sass()
+            /** Instead of sass.logError you use gulpSassError */             
+            .on('error', gulpSassError(throwError))
+        )
+        .pipe(postcss(config.postcss))
+        .pipe(gulp.dest('web/css'));
 });
 
 gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'html', 'images'));

@@ -151,6 +151,9 @@
         }
         &__photo {
             grid-row: unset;
+            img {
+                object-fit: contain;
+            }
         }
         &__skills {
             grid-template-columns: repeat(2, 260px);
