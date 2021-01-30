@@ -8,10 +8,12 @@
         @include before_circle;
         z-index: 2;
         padding-left: 10px;
+        color: lightyellow;
     }
     &__title {
         width: 535px;
         margin-top: 10px;
+        color: lightyellow;
     }
     &__btns {
         margin-top: 25px;
@@ -19,7 +21,9 @@
         width: 290px;
         justify-content: space-between;
         align-items: center;
-        
+        a {
+            color: lightyellow;
+        }
        
     }
     &__link {

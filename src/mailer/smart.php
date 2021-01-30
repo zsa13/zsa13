@@ -1,5 +1,7 @@
 <?php 
 
+// Dont work in Github
+
 $name = $_POST['name'];
 $text1 = $_POST['text'];
 $email = $_POST['email'];
@@ -13,13 +15,13 @@ $mail->CharSet = 'utf-8';
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'zavialov.sergei.a';                 // РќР°С€ Р»РѕРіРёРЅ
-$mail->Password = 'sk4+PnT.8mmkPxK';                           // РќР°С€ РїР°СЂРѕР»СЊ РѕС‚ СЏС‰РёРєР°
+$mail->Username = 'имя пользователя почты отправитель';                 // РќР°С€ Р»РѕРіРёРЅ
+$mail->Password = 'пароль этой почты';                           // РќР°С€ РїР°СЂРѕР»СЊ РѕС‚ СЏС‰РёРєР°
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
  
-$mail->setFrom('zavialov.sergei.a@yandex.ru', 'Resume');   // РћС‚ РєРѕРіРѕ РїРёСЃСЊРјРѕ 
-$mail->addAddress('siga-spb@yandex.ru');     // Add a recipient
+$mail->setFrom('полное наименование почты отправителя', 'от кого');   // РћС‚ РєРѕРіРѕ РїРёСЃСЊРјРѕ 
+$mail->addAddress('почта получатель');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
